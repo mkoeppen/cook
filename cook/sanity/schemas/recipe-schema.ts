@@ -28,15 +28,31 @@ const recipe = {
             ]
         },
         {
-            name: 'url',
-            title: 'URL',
-            type: 'url'
+            name: 'portion',
+            title: 'Portionen',
+            type: 'number'
+        },
+        {
+            name: 'time',
+            title: 'Zeit in Minuten',
+            type: 'number'
+        },
+        {
+            name: 'ingredient',
+            title: 'Zutaten',
+            type: 'array',
+            of: [{ type: 'ingredient' }],
+            options: {
+                modal: {
+                    type: 'popover'
+                }
+            }
         },
         {
             name: 'content',
-            title: 'Content',
+            title: 'Zubereitung',
             type: 'array',
-            of: [{ type: 'block' }]
+            of: [{ type: 'recipeStep' }]
         }
     ]
 }
