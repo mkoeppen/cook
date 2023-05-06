@@ -1,4 +1,5 @@
 # Tutorial: https://www.youtube.com/watch?v=OcTPaUfay5I
+https://www.youtube.com/watch?v=49Fx963su1I
 
 # Start Sanity
 ```sh
@@ -25,3 +26,6 @@ If you want install it in app folder:
 npm install sanity next-sanity
 ```
 
+
+
+https://youtu.be/49Fx963su1I?t=1226
