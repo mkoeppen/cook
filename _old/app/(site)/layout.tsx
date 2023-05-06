@@ -1,5 +1,6 @@
 import '../globals.css'
 import Link from 'next/link';
+import { SessionProvider } from 'next-auth/react';
 
 export const metadata = {
   title: 'Create Next App',
