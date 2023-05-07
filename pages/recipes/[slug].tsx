@@ -27,8 +27,7 @@ const Recipe = ({ recipe } : Props) => {
        </div>
     }  
 
-    return <Layout>    
-    <article className="bg-slate-900 rounded-lg overflow-hidden text-white">
+    return <article className="bg-slate-900 rounded-lg overflow-hidden text-white">
          <img src={recipe.image}/>
          <div className="p-4">
              <h2 className="text-2xl font-semibold">{recipe.name}</h2>
@@ -52,7 +51,6 @@ const Recipe = ({ recipe } : Props) => {
             ))}
         </div>
      </article>
-     </Layout>
 }
 
 export default Recipe;

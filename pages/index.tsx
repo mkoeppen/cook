@@ -16,8 +16,7 @@ export default function Home({ recipes }: Props) {
 
 
 
-  return (
-    <Layout>
+  return (<>
       <Head>
         <title>My Blog | Explore the new horizon</title>
         <link rel="icon" href="/smallLogo.ico" />
@@ -39,8 +38,7 @@ export default function Home({ recipes }: Props) {
             </Link>
         ))}</div>
           
-        </div>
-    </Layout>
+        </div></>
   );
 }
 
