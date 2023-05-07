@@ -26,6 +26,4 @@ If you want install it in app folder:
 npm install sanity next-sanity
 ```
 
-
-
-https://youtu.be/49Fx963su1I?t=1226
+https://youtu.be/49Fx963su1I?t=1741
