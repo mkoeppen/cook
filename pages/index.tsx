@@ -2,37 +2,31 @@ import Head from "next/head";
 import "slick-carousel/slick/slick.css";
 import Banner from "../components/Banner";
 import BannerBottom from "../components/BannerBottom";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import { getRecipes } from "../sanity/lib/sanity-utils";
 import Link from "next/link";
 import { Recipe } from "../types/recipe";
+import Layout from "../layout/default";
 
 interface Props {
   recipes: [Recipe]
 }
 
-export default function Home({ recipes }: Props) {  
+export default function Home({ recipes }: Props) {
+
+
+
 
   return (
-    <div>
+    <Layout>
       <Head>
         <title>My Blog | Explore the new horizon</title>
         <link rel="icon" href="/smallLogo.ico" />
       </Head>
-
-      <main className="font-bodyFont">
-        {/* ============ Header Start here ============ */}
-        <Header />
-        {/* ============ Header End here ============== */}
-        {/* ============ Banner Start here ============ */}
+      
         <Banner />
-        {/* ============ Banner End here ============== */}
         <div className="max-w-7xl mx-auto h-60 relative">
           <BannerBottom />
         </div>
-        {/* ============ Banner-Bottom End here ======= */}
-        {/* ============ Post Part Start here ========= */}
         <div className="max-w-7xl mx-auto py-20 px-4">
           
         <div className=" text-slate-50 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">{recipes.map(recipe => (
@@ -46,12 +40,7 @@ export default function Home({ recipes }: Props) {
         ))}</div>
           
         </div>
-        {/* ============ Post Part End here =========== */}
-        {/* ============ Footer Start here============= */}
-        <Footer />
-        {/* ============ Footer End here ============== */}
-      </main>
-    </div>
+    </Layout>
   );
 }
 

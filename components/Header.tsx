@@ -37,6 +37,8 @@ const Header = () => {
           <button onClick={() => signIn()} className="uppercase text-sm border-[1px] border-primaryColor hover:border-secondaryColor px-4 py-1 font-semibold hover:text-white rounded-md hover:bg-secondaryColor transition-all duration-300 active:bg-yellow-600">
             Sign In
           </button>
+
+          <button onClick={() => signOut()}>Sign Out</button>
         </div>
       </div>
     </div>

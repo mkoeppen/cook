@@ -3,6 +3,7 @@ import { getRecipe } from '../../sanity/lib/sanity-utils';
 import { client } from '../../sanity/lib/client';
 import { Recipe } from '../../types/recipe';
 import { GetStaticProps } from 'next';
+import Layout from '../../layout/default';
 
 type Props = {
     recipe: Recipe
@@ -15,36 +16,43 @@ const Recipe = ({ recipe } : Props) => {
     let content = undefined;
     if (recipe.content) {
         content = <div>
-           {recipe.content.map(step => (
-               <div>
-                   <PortableText value={step.content}/>
-               </div>
-           ))}
+           { 
+                recipe.content.map((step, index) => {
+                    return <div key={index}>
+                                <PortableText value={step.content}/>
+                            </div>
+                    }  
+                )
+            }
        </div>
     }  
 
-    return <article className="bg-slate-900 rounded-lg overflow-hidden text-white">
+    return <Layout>    
+    <article className="bg-slate-900 rounded-lg overflow-hidden text-white">
          <img src={recipe.image}/>
          <div className="p-4">
              <h2 className="text-2xl font-semibold">{recipe.name}</h2>
          </div>
          { recipe.time && <span className="absolute top-0 right-0 bg-orange-400 py-2 px-4 rounded-bl-md font-bold">{recipe.time} min</span> }
          <table>
-         { recipe.ingredient.map(i => (
-                 <tr>
-                     <td>{i.amount}</td>
-                     <td>{i.ingredient}</td>
-                 </tr>
-         ))}
+            <tbody>
+            { recipe.ingredient.map((i, index) => (
+                    <tr key={index}>
+                        <td>{i.amount}</td>
+                        <td>{i.ingredient}</td>
+                    </tr>
+            ))}
+            </tbody>
          </table>
         <div>
-            {recipe.content?.map(step => (
-                <div>
+            {recipe.content?.map((step, index) => (
+                <div key={index}>
                     <PortableText value={step.content}/>
                 </div>
             ))}
         </div>
      </article>
+     </Layout>
 }
 
 export default Recipe;
