@@ -1,12 +1,12 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { useSession, signIn, signOut } from "next-auth/react"
+// import { useSession, signIn, signOut } from "next-auth/react"
 
 
 const Layout = ({ children }: any) => {
-    const { data: session } = useSession();
+    // const { data: session } = useSession();
 
-    if(session) {
+    // if(session) {
         return (
             <>
                 <Header />
@@ -14,15 +14,15 @@ const Layout = ({ children }: any) => {
                 <Footer />
             </>
         );
-    } else {
-        return (
-            <>
-                <main>          <button onClick={() => signIn()} className="uppercase text-sm border-[1px] border-primaryColor hover:border-secondaryColor px-4 py-1 font-semibold hover:text-white rounded-md hover:bg-secondaryColor transition-all duration-300 active:bg-yellow-600">
-            Sign In
-          </button></main>
-            </>
-        );
-    }
+    // } else {
+    //     return (
+    //         <>
+    //             <main>          <button onClick={() => signIn()} className="uppercase text-sm border-[1px] border-primaryColor hover:border-secondaryColor px-4 py-1 font-semibold hover:text-white rounded-md hover:bg-secondaryColor transition-all duration-300 active:bg-yellow-600">
+    //         Sign In
+    //       </button></main>
+    //         </>
+    //     );
+    // }
 
 }
 
